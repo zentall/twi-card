@@ -1,7 +1,7 @@
 *.png
 *.db
 .DS_Store
-__pycache__
+__pycache__/
 treq.py
 tutil.py
 server.py
