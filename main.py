@@ -33,7 +33,7 @@ def register_website():
         db.add_website(id=uid, img=img.read(), **request.form)
 
         # カードのページへリダイレクト
-        return redirect(url_for("card/{}".format(uid))
+        return redirect(url_for("card/{}".format(uid)))
     else:
         print(validator.errors)
         return abort(400, "invalid paramators")
