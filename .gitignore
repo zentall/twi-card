@@ -1,3 +1,4 @@
 *.png
 treq.py
 server.py
+__main.py

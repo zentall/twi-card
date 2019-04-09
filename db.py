@@ -4,8 +4,9 @@ Q_CREATE_TABLE = """CREATE TABLE content (id text,
                                           img blob,
                                           url text,
                                           title text,
-                                          description text)"""
-Q_INSERT = "INSERT INTO content VALUES(?, ?, ?, ?, ?)"
+                                          description text,
+                                          card_type text)"""
+Q_INSERT = "INSERT INTO content VALUES(?, ?, ?, ?, ?, ?)"
 Q_SELECT = "SELECT * FROM content WHERE id=?"
 Q_SELECT_IMG = "SELECT img FROM content WHERE id=?"
 
@@ -32,8 +33,9 @@ class WebsiteDB:
         self.cursor.row_factory = None
 
 
-    def add_website(self, id, img, url, title, description):
-        self.cursor.execute(Q_INSERT, [id, img, url, title, description])
+    def add_website(self, id, img, url, title, description, card_type):
+        print([id, type(img), url, title, description, card_type])
+        self.cursor.execute(Q_INSERT, [id, img, url, title, description, card_type])
         self.con.commit()
 
     def get_website(self, id):

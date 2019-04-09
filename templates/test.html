@@ -1,0 +1,33 @@
+<script>
+function upload() {
+  console.log("upload")
+  var input = document.getElementById("img")
+
+  var data = new FormData()
+  data.append('img', input.files[0])
+  data.append('url', 'http://aaa.com')
+  data.append('title', 'tttttt')
+  data.append('description', 'ddd')
+
+  fetch('/register', {
+    method: 'POST',
+    body: data
+  }).then(
+    response => response.text() // if the response is a JSON object
+  ).then(
+    success => console.log(success) // Handle the success response object
+  ).catch(
+    error => console.log(error) // Handle the error response object
+  );
+}
+</script>
+
+<form action="http://localhost:5042/register" method="post">
+  <input type="text" name="url" value="uurrll">
+  <input type="text" name="title" value="My Title">
+  <input type="text" name="description" value="My Desc">
+  <input type="file" name="img" id="img">
+  <input type="submit">
+  <input type="button" onclick="upload()" value="submit">
+</form>
+

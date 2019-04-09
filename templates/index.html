@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive product landing page.">
+    <title>ツイカード(TwiCard) - Twitterカード自動作成サービス -</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <!--<![endif]-->
+    
+    <!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" type="text/css" href="/static/css/layouts/marketing.css">
+            <!-- <link rel="stylesheet" type="text/css" href="https://purecss.io/combo/1.18.13?/css/layouts/marketing.css"> -->
+        <!--<![endif]-->
+
+    <script src="static/js/main.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">ツイカード</a>
+
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-selected"><a href="/" class="pure-menu-link">Home</a></li>
+            <li class="pure-menu-item"><a href="#about" class="pure-menu-link">About</a></li>
+            <!-- <li class="pure-menu-item"><a href="#content" class="pure-menu-link"><button class="button-xsmall pure-button">カードを作成</button></a></li> -->
+            <li class="pure-menu-item"><a href="#content" class="pure-menu-link">カードを作成</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="splash-container">
+    <div class="splash">
+        <h1 class="splash-head">リンクをもっと魅力的に</h1>
+
+        <form class="pure-form">
+            <input id="top_url" name="url" type="text" placeholder="ウェブサイトのURL">
+        </form>
+        <a href="#content" class="pure-button pure-button-primary" onclick="get_meta_info('top_url')">Get Started</a>
+        <!-- <input type="button" value="Get Started"> -->
+    </div>
+</div>
+
+<div class="content-wrapper">
+    <div class="content anchor" id="about">
+        <h2 class="content-head is-center">ツイカードの３つの特徴</h2>
+
+        <div class="pure-g">
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+
+                <h3 class="content-subhead">
+                    <i class="fa fa-rocket"></i>
+                    今すぐに始められます
+                </h3>
+                <p>
+                    ツイカードは、簡単にTwitterカードを作成することができるサービスです。お好みのアイキャッチ画像や説明文で、あなただけのオリジナルのカードが作成できます。
+                </p>
+            </div>
+            <!-- <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-mobile"></i>
+                    Responsive Layouts
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div> -->
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+                <h3 class="content-subhead">
+                    <i class="fas fa-images"></i>
+                    Webページの情報を視覚的に
+                </h3>
+                <p>
+                    ツイカードを使うことでWebページの詳細をTwitterのタイムライン上に表示できます。
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+                <h3 class="content-subhead">
+                    <i class="far fa-check-square"></i>
+                    選べる２種類のカード
+                </h3>
+                <p>
+                    カードの大きさは２種類から選択できます。<br>
+                    <b>サマリーカード</b>はコンパクトサイズの基本的なカード、<b>ビッグイメージカード</b>は大きな画像を表示するためのカードです。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ribbon l-box-lrg pure-g">
+            <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-1-5"></div>
+            <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-1-5">
+            <img width="300" alt="File Icons" class="pure-img-responsive" src="img/common/file-icons.png">
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+
+            <h2 class="content-head content-head-ribbon">Twitterカードとは？</h2>
+
+            <p>
+                Twitterカードとは、Twitterのタイムライン上にWebページの画像やタイトル、説明文を表示できる仕組みです。
+                ユーザーに対して、Webページの内容をより詳しく伝えることができます。
+            </p>
+        </div>
+    </div>
+
+    <div class="content anchor" id="content">
+        <!-- <h2 class="content-head is-center">リンクをもっと魅力的に</h2> -->
+
+        <div class="pure-g">
+            <!-- <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                <form class="pure-form pure-form-stacked">
+                    <fieldset>
+
+                        <label for="name">ウェブサイトのURL</label>
+                        <input id="name" type="text" placeholder="URL">
+                        <button type="submit" class="pure-button">プレビュー</button>
+                    </fieldset>
+                </form>
+            </div> -->
+            <div class="l-box-lrg pure-u-1 pure-u-md-1-5"></div>
+            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                <h2>カードを作成する</h2>
+                <form action="/register"  method="POST" enctype="multipart/form-data" class="pure-form pure-form-stacked">
+                    <fieldset>
+                        <label for="target_url">ウェブサイトのURL</label>
+                        <input id="target_url" name="url" type="text" placeholder="ウェブサイトのURL">
+        
+                        <label for="title">*タイトル</label>
+                        <input id="title" name="title" type="text" placeholder="Title">
+        
+                        <label for="description">*説明</label>
+                        <textarea id="description" name="description" laceholder="Description"></textarea>
+                        <button id="auto_get_button" type="button" onclick="get_meta_info('target_url')">*自動で設定</button>
+                                
+                        <label for="image">アイキャッチ画像</label>
+                        <input id="image" name="img" type="file" placeholder="Image" onchange="set_preview(this.files)">
+                        <div>
+                            <img id="preview">
+                        </div>
+
+                        <div class="pure-g">
+                            <div class="pure-u-1-2">
+                                <label for="option-two" class="pure-radio">
+                                    <input id="option-two" type="radio" name="card_type" value="summary" checked>
+                                    サマリーカード
+                                    <img src="static/img/s.png">
+                                </label>
+                            </div>
+        
+                            <div class="pure-u-1-2">
+                                <label for="option-three" class="pure-radio">
+                                    <input id="option-three" type="radio" name="card_type" value="big_image">
+                                    ビッグイメージカード
+                                    <img src="static/img/l.png">
+                                </label>                
+                            </div>
+                        </div>
+<style>
+.pure-form input[type="radio"] {
+    width: auto;
+}
+
+label img {
+    width: 90%;
+    height: auto;
+    border: solid 2px;
+}
+
+#preview {
+    width: 50%;
+}
+
+#description {  
+  /* max-height: 200px; */
+  width: 100%;
+  margin: 4px 0;
+  resize: none;
+}
+.content-head {
+    text-transform: none;
+}
+
+.anchor {
+    padding-top:4em;
+    margin-top:-4em;
+}
+</style>
+
+                        <button type="submit" class="pure-button">カードを作成</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="l-box-lrg pure-u-1 pure-u-md-1-5"></div>
+        </div>
+
+    </div>
+
+    <div class="footer l-box is-center">
+        ツイカード 〜Twitter カードを自動で作成〜
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

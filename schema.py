@@ -1,24 +1,25 @@
 import cerberus
 
 schema = {
-    "img": {
-        "required": True
-    },
-
     "url": {
         "required": True,
-        "type": "binary",
+        "type": "string",
         "regex": "https?://[^ ]+"
     },
 
     "title": {
         "required": True,
-        "type": "binary"
+        "type": "string"
     },
 
     "description": {
         "required": True,
-        "type": "binary"
+        "type": "string"
+    },
+
+    "card_type": {
+        "required": True,
+        "type": "string"
     }
 }
 
