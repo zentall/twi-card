@@ -91,6 +91,6 @@ def get_meta_info():
 
 if __name__ == "__main__":
     # app.run(debug=True, host='0.0.0.0', port=5042, threaded=True)
-    app.run(host='0.0.0.0')
-
+    from os import environ
+    app.run(debug=False, port=environ.get("PORT", 5000))
 
