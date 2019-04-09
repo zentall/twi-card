@@ -33,7 +33,7 @@ def register_website():
         db.add_website(id=uid, img=img.read(), **request.form)
 
         # カードのページへリダイレクト
-        return redirect(url_for("card/{}".format(uid)))
+        return redirect(url_for("get_card", id=uid))
     else:
         print(validator.errors)
         return abort(400, "invalid paramators")
@@ -88,6 +88,7 @@ def get_meta_info():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=5042, threaded=True)
+    # app.run(debug=True, host='0.0.0.0', port=5042, threaded=True)
+    app.run()
 
 
