@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import uuid
 import os
 import requests
@@ -89,6 +91,6 @@ def get_meta_info():
 
 if __name__ == "__main__":
     # app.run(debug=True, host='0.0.0.0', port=5042, threaded=True)
-    app.run()
+    app.run(host='0.0.0.0')
 
 
