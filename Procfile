@@ -1,1 +1,1 @@
-web: python capture.py
+web: python main.py
