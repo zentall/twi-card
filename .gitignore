@@ -1,4 +1,8 @@
 *.png
+*.db
+.DS_Store
+__pycache__
 treq.py
+tutil.py
 server.py
 __main.py
