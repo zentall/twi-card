@@ -1,33 +1,57 @@
-<script>
-function upload() {
-  console.log("upload")
-  var input = document.getElementById("img")
+<!doctype html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" type="text/css" href="./twitter-card.css">
+</head>
 
-  var data = new FormData()
-  data.append('img', input.files[0])
-  data.append('url', 'http://aaa.com')
-  data.append('title', 'tttttt')
-  data.append('description', 'ddd')
 
-  fetch('/register', {
-    method: 'POST',
-    body: data
-  }).then(
-    response => response.text() // if the response is a JSON object
-  ).then(
-    success => console.log(success) // Handle the success response object
-  ).catch(
-    error => console.log(error) // Handle the error response object
-  );
-}
-</script>
 
-<form action="http://localhost:5042/register" method="post">
-  <input type="text" name="url" value="uurrll">
-  <input type="text" name="title" value="My Title">
-  <input type="text" name="description" value="My Desc">
-  <input type="file" name="img" id="img">
-  <input type="submit">
-  <input type="button" onclick="upload()" value="submit">
-</form>
+<body>
+<div class="EmbeddedTweet">
+  <div class="EmbeddedTweet-author u-cf">
+    <img class="EmbeddedTweet-author-avatar" src="https://pbs.twimg.com/profile_images/1081291124143054848/q5_nbtD1_mini.jpg">
+    <div class="EmbeddedTweet-author-name u-pullLeft">ゼンオブマンボ</div>
+    <div class="EmbeddedTweet-author-handle u-pullLeft">@zenofhell</div>
+  </div>
 
+
+
+  <div class="EmbeddedTweet-text">
+    <p>The card for your website will look a little something like this!</p>
+  </div>
+
+
+
+  <div class="CardPreview u-marginVm" id="CardPreview" data-preview-endpoint="/preview/html">
+    <div class="CardPreview-sampleOverlay">
+      <h5 class="CardPreview-sampleOverlay-text">Card preview</h5>
+    </div>
+    <div class="CardPreview-errorMessage">Unable to render Card preview</div>
+    <div class="CardPreview-spinner"></div>
+    <div class="CardPreview-preview js-cardPreview">
+      <div class="TwitterCardsGrid TwitterCard TwitterCard--animation">
+        <div class="TwitterCardsGrid-col--12 TwitterCardsGrid-col--spacerBottom CardContent">
+          <a class="js-openLink u-block TwitterCardsGrid-col--12 TwitterCard-container TwitterCard-container--clickable SummaryCard--large" href="https://gigazine.net/news/20190409-egypt-crop-circle/" rel="noopener" data-card-breakpoints="w400 w350 w300 w250 w200 w150 w100 w50 ">
+            <div class="SummaryCard-image TwitterCardsGrid-col--12">
+              <div class="tcu-imageContainer tcu-imageAspect--2to1">
+                <div class="tcu-imageWrapper" style="opacity: 1; background-image: url(&quot;https://pbs.twimg.com/card_img/1115497085430841344/SxJZTWb7?format=jpg&amp;name=800x419&quot;); background-size: cover;" data-style="background-image: url(https://pbs.twimg.com/card_img/1115497085430841344/SxJZTWb7?format=jpg&amp;name=800x419); background-size: cover;">
+                  <img class="u-block" data-src="https://pbs.twimg.com/card_img/1115497085430841344/SxJZTWb7?format=jpg&amp;name=800x419" alt="" src="https://pbs.twimg.com/card_img/1115497085430841344/SxJZTWb7?format=jpg&amp;name=800x419">
+                </div>
+              </div>
+            </div>
+
+            <div class="SummaryCard-contentContainer TwitterCardsGrid-col--12">
+              <div class="SummaryCard-content TwitterCardsGrid-ltr">
+                <h2 class="TwitterCard-title js-cardClick tcu-textEllipse--multiline" dir="ltr">エジプトの砂漠で増えまくる謎のミステリーサークルの正体とは？</h2>
+                <p class="tcu-resetMargin u-block TwitterCardsGrid-col--spacerTop tcu-textEllipse--multiline" dir="ltr">エジプトの砂漠の上にできたミステリーサークルは、半分だけ真っ暗なものもあれば、半分は明るく半分は暗いものもあ...</p>
+                <span class="u-block TwitterCardsGrid-col--spacerTop SummaryCard-destination" dir="ltr">gigazine.net</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

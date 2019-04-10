@@ -35,7 +35,7 @@ def register_website():
         db.add_website(id=uid, img=img.read(), **request.form)
 
         # カードのページへリダイレクト
-        return redirect(url_for("get_card", id=uid))
+        return redirect(url_for("get_card", id=uid)+"?refresh=false")
     else:
         print(validator.errors)
         return abort(400, "invalid paramators")
@@ -46,10 +46,11 @@ def register_website():
 def get_card(id):
     db = WebsiteDB()
     website = db.get_website(id)
+    f_ref = request.args.get("refresh")
 
     # IDが登録されていれば
     if website is not None:
-        return render_template("card.html", **website)
+        return render_template("card.html", **website, refresh=f_ref)
     else:
         return abort(404, { 'id': id })
 
