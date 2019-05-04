@@ -50,3 +50,18 @@ function set_preview(files) {
     }
     reader.readAsDataURL(files[0]);
 }
+
+function toggle_link(target) {
+    var menu = document.getElementById("header_menu")
+    for(var i=0; i<menu.children.length; ++i) {
+        var c = menu.children[i].getAttribute("class").split("pure-menu-selected")
+        if (c.length >= 2) {
+            // セレクト要素を解除
+            menu.children[i].setAttribute("class", c[0])
+        } else if (menu.children[i] == target) {
+            // セレクト要素を設定
+            target.setAttribute("class", c[0] + " pure-menu-selected")
+        }
+    }
+
+}
